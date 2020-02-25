@@ -1,0 +1,12 @@
+<div style="text-align: center;">
+  <mat-form-field>
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker"  [(ngModel)]="this.events" (dateInput)="changeFormat()">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</div>
+<div>Date : {{this.test}}</div>
+
+<button (click)="log()">LOG</button>
+
