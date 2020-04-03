@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatDatepickerInputEvent} from '@angular/material/datepicker';
 import { DateAdapter } from '@angular/material/core';
-import { type } from 'os';
+import { OffsetDateDTO } from '../models/date.model';
+import { TestService } from './test.service';
+import { DisponibilityDTO } from '../models/disponibilityDTO.model';
 
 
 
@@ -12,25 +14,45 @@ import { type } from 'os';
   styleUrls: ['./test.component.scss']
 })
 export class TestComponent implements OnInit {
-  events: Date;
+  x: string;
+
+
   test: string;
   picker: any;
+  picker2: any;
+  offsetDate: OffsetDateDTO;
 
-  constructor(private _adapter: DateAdapter<any>) { }
+  beggining: Date;
+  end: Date;
+
+  dispo: DisponibilityDTO = new DisponibilityDTO();
+
+  constructor(private adapter: DateAdapter<any>, public testServ: TestService) { }
 
   ngOnInit() {
-    this._adapter.setLocale('fr');
+    this.adapter.setLocale('fr');
   }
 
   log() {
-    console.log(new Date(this.events.setHours(1)).toUTCString());
+    console.log(this.dispo);
+
+
 
   }
 
-  changeFormat() {
-    this.events = new Date(this.events.setHours(1));
-    this.test = this.events.toUTCString();
-    console.log(this.test);
+  storeBeggining(event: Date) {
+    event.setHours(1);
+    this.dispo.beggining = event.toJSON();
+  }
+
+  storeEnd(event: Date) {
+    event.setHours(1);
+    this.dispo.end = event.toJSON();
+  }
+
+  sendDate() {
+    console.log(this.dispo);
+    this.testServ.testOffset(this.dispo);
   }
 
 

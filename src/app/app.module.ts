@@ -11,6 +11,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
+import { authInterceptorProviders } from './auth/auth.interceptor';
 
 
 @NgModule({
@@ -27,9 +32,12 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatNativeDateModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    // AngularFireModule.initializeApp(environment.firebase),
+ 	  // AngularFirestoreModule,
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
