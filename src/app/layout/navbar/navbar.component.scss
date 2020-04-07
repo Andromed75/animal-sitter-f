@@ -1,20 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+
 body {
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Fredoka One', cursive;
   font-weight: 400;
 }
 * {
   box-sizing: border-box;
 }
 nav {
-  padding: 30px;
-  background: #29662c;
+  padding: 14px;
+  // background: #29662c;
+  background: linear-gradient(10deg, rgb(255, 203, 59), #fff1c4);
+  width: 100%;
 }
 nav ul {
-  float: left;
+  float: none;
+  text-align: center;
 }
 nav ul li {
   display: inline-block;
-  float: left;
+  // float: left;
 }
 nav ul li:not(:first-child) {
   margin-left: 25px;
@@ -23,15 +29,18 @@ nav ul li a {
   display: inline-block;
   outline: none;
   color: #ffffff;
-  font-size: 16px;
+  font-size: 20px;
   text-decoration: none;
   letter-spacing: 0.04em;
 }
 nav ul li a:hover {
-  color: #df0000;
-  text-decoration: none;
+  color: #87ecf0;
+  text-decoration: underline;
 }
 @media screen and (max-width: 560px) {
+  nav {
+    padding: 35px;
+    }
   .nav-container {
     position: fixed;
     top: 0;
@@ -39,7 +48,7 @@ nav ul li a:hover {
     height: 100%;
     width: 100%;
     z-index: -1;
-    background: #29662c;
+    background: rgb(255, 203, 59);
     opacity: 0;
     transition: all 0.2s ease;
   }

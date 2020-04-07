@@ -16,12 +16,16 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { authInterceptorProviders } from './auth/auth.interceptor';
+import { HomeComponent } from './home/home.component';
+import { AccountCreationComponent } from './feature/account-creation/account-creation.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent
+    TestComponent,
+    HomeComponent,
+    AccountCreationComponent
   ],
   imports: [
     BrowserModule,
