@@ -1,11 +1,10 @@
 <div class="test">
 
   <div class="containerr">
-    <form id="contact" #f="ngForm" (ngSubmit)="f.form.valid && auth()">
-      <h3>Je m'inscris</h3>
-      <h4>Des informations complémentaires vous seront demandé plus tard afin de compléter votre profil</h4>
+    <form id="contact" #f="ngForm" (ngSubmit)="f.form.valid && login()">
+      <h3>Je me connecte</h3>
       <fieldset>
-        <input [(ngModel)] = "request.pseudo" name="pseudo" placeholder="Pseudo" type="text" tabindex="1" required autofocus
+        <input [(ngModel)] = "request.username" name="username" placeholder="Pseudo" type="text" tabindex="1" required autofocus
         required minlength="3" maxlength="20" #username="ngModel">
         <div class="alert-danger" *ngIf="f.submitted && username.invalid">
           <div *ngIf="username.errors.required">Username is required</div>
@@ -30,19 +29,7 @@
       </fieldset>
 
       <fieldset>
-        <input [(ngModel)] = "request.email" name="email" placeholder="email" type="email" tabindex="3" required email
-        #email="ngModel">
-        <div class="alert-danger" *ngIf="f.submitted && email.invalid">
-          <div *ngIf="email.errors.required">Email is required</div>
-          <div *ngIf="email.errors.email">
-            Email must be a valid email address
-          </div>
-        </div>
-      </fieldset>
-
-
-      <fieldset>
-        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Valider</button>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Connection</button>
       </fieldset>
 
       <div class="alert alert-success" *ngIf="isSuccessful">

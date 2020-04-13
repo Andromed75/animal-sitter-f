@@ -18,6 +18,8 @@ import { environment } from '../environments/environment';
 import { authInterceptorProviders } from './auth/auth.interceptor';
 import { HomeComponent } from './home/home.component';
 import { AccountCreationComponent } from './feature/account-creation/account-creation.component';
+import { AnimalSearchComponent } from './feature/animal-search/animal-search.component';
+import { LoginComponent } from './feature/login/login.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { AccountCreationComponent } from './feature/account-creation/account-cre
     AppComponent,
     TestComponent,
     HomeComponent,
-    AccountCreationComponent
+    AccountCreationComponent,
+    AnimalSearchComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

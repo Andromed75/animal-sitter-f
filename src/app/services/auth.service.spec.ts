@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AuthService } from './auth.service';
+import { TokenStorageService } from './token-storage.service';
 
-describe('AuthService', () => {
+describe('TokenStorageService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: AuthService = TestBed.get(AuthService);
+    const service: TokenStorageService = TestBed.get(TokenStorageService);
     expect(service).toBeTruthy();
   });
 });

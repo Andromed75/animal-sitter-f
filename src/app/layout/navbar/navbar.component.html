@@ -1,13 +1,16 @@
 <nav>
   <input type="checkbox" id="nav" class="hidden"/>
-  <label for="nav" class="nav-open"><i></i><i></i><i></i></label>
+  <div><label (click)="change()" for="nav" class="nav-open"><i></i><i></i><i></i></label></div>
+
   <div class="nav-container">
     <ul>
-      <li><a href="#">Accueil</a></li>
+      <li><div class="nav-button"><a routerLink="/">Accueil</a></div></li>
       <li><a href="#">About</a></li>
       <li><a href="#">Careers</a></li>
       <li><a href="#">Contact</a></li>
       <li><a href="#">Test</a></li>
     </ul>
+    <div style="width: 30px; height: 30px; background: blue; right: 0;"></div>
+    <!-- <div style="width: 100px; height: 100px; background: blue; border-radius: 100%; right: 0;"></div> -->
   </div>
 </nav>
