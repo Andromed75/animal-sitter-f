@@ -10,6 +10,8 @@ export class NavtestComponent implements OnInit {
 
   @Input() username: string;
   @Input() isLoggedIn: boolean;
+  @Input() id: string;
+
 
 
   constructor(private tokenService: TokenStorageService) {}
@@ -17,13 +19,17 @@ export class NavtestComponent implements OnInit {
   ngOnInit() {
 
     if (this.username === null || this.username === undefined || this.username === '') {
-      this.username = 'Se connecter';
+      this.username = 'Inscription / Connexion';
     }
+
+    console.log(this.id);
+    console.log(this.isLoggedIn);
+
 
   }
 
   uncheck() {
-    document.getElementById('nav-check').click();
+    document.getElementById('dd-input').click();
   }
 
 

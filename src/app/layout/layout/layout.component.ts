@@ -9,10 +9,13 @@ export class LayoutComponent implements OnInit {
 
   @Input() username: string;
   @Input() isLoggedIn: boolean;
+  @Input() id: string;
 
   constructor() { }
 
   ngOnInit() {
+    console.log('Layout, id = ' + this.id);
+
   }
 
 }

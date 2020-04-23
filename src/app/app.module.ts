@@ -20,6 +20,8 @@ import { HomeComponent } from './home/home.component';
 import { AccountCreationComponent } from './feature/account-creation/account-creation.component';
 import { AnimalSearchComponent } from './feature/animal-search/animal-search.component';
 import { LoginComponent } from './feature/login/login.component';
+import { AccountComponent } from './feature/account/account.component';
+import { ErrorComponent } from './feature/error/error.component';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { LoginComponent } from './feature/login/login.component';
     HomeComponent,
     AccountCreationComponent,
     AnimalSearchComponent,
-    LoginComponent
+    LoginComponent,
+    AccountComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,

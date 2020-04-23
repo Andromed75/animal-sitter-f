@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   private roles: string[];
   isLoggedIn = false;
   username: string;
+  id: string;
 
 
   constructor(private tokenStorageService: TokenStorageService) { }
@@ -24,7 +25,9 @@ export class AppComponent implements OnInit {
       const user = this.tokenStorageService.getUser();
       this.roles = user.roles;
       this.username = user.username;
-      console.log(this.username);
+      this.id = user.id;
+      console.log(user);
+      console.log('APP COMP, id = ' + user.id);
     }
 
   }
