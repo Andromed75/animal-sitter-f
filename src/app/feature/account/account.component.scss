@@ -1,11 +1,18 @@
+@import '../../../ressource/variables.scss';
+.body {
+  background: $animal-light-blue!important;
 
+}
 
 .profil-info {
   margin-left: 5px;
   margin-right: 5px;
-  border-color: black;
-  border-style: solid;
+  // border-color: black;
+  // border-style: solid;
   text-align: center;
+  background: #f9f9f9;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  padding-top: 8%;
 }
 .profil-photo {
   margin-left: 5px;
@@ -13,5 +20,21 @@
   border-color: black;
   border-style: solid;
   text-align: center;
+}
 
+.photo {
+  height: 300px;
+  width: 100%;
+  text-align: center;
+}
+
+.pic {
+  margin-top: 25px;
+  display: inline-block;
+  width: 250px;
+  height: 250px;
+  background-image: url("https://www.dontshake.org/media/k2/items/cache/71f67488b0857639cee631943a3fc6fa_XL.jpg");
+  background-size: contain;
+  text-align: center;
+  border-radius: 100%;
 }
