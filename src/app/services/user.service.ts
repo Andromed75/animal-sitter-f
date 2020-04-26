@@ -19,4 +19,10 @@ export class UserService {
   getUserDetails(userId): Observable<UserDetails> {
     return this.http.get<UserDetails>(USER_API + userId);
   }
+
+  autocomplete(adress: string) {
+    const url = `https://ms-store-franprix-sandbox.hp-mcommerce.franprix.fr/public/api/franprix/v1/geocomplete?input=`;
+    return this.http.get(url + adress);
+  }
+
 }

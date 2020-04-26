@@ -6,6 +6,7 @@ import { Disponibility } from 'src/app/models/disponibility.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { HomeComponent } from 'src/app/home/home.component';
+import { Address } from 'src/app/models/address.model';
 
 @Component({
   selector: 'app-account',
@@ -17,7 +18,10 @@ export class AccountComponent implements OnInit {
   isLoggedIn = false;
   animals: Animal[];
   disponibility: Disponibility[];
-  user: UserDetails = new UserDetails('', '', '', this.animals, this.disponibility);
+  autocompleteResult: any;
+  addressForAutocomplete = '';
+  address: Address = new Address('', '', '', '', '');
+  user: UserDetails = new UserDetails('', '', '', '', '', this.address,  this.animals, this.disponibility);
 
   constructor(private route: ActivatedRoute, private userService: UserService, private tokenStorageService: TokenStorageService, private router: Router) { }
 
@@ -35,7 +39,10 @@ export class AccountComponent implements OnInit {
     this.userService.getUserDetails(id).subscribe(
       data => {
         console.log(data);
-        
+        this.user = data;
+        console.log(this.user);
+
+
 
       },
       err => {
@@ -43,11 +50,15 @@ export class AccountComponent implements OnInit {
 
       }
     );
-
-
-
   }
 
+  autocomplete(){
+    console.log(this.addressForAutocomplete);
+
+    if (this.addressForAutocomplete.length % 3 === 0) {
+      this.userService.autocomplete(this.addressForAutocomplete).subscribe(x => this.autocompleteResult = x, err => console.log(err));
+    }
+  }
 
 
 

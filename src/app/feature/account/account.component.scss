@@ -4,15 +4,42 @@
 
 }
 
+h3 {
+  color: white;
+
+}
+
+label {
+  margin-top: 10px;
+}
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #fff;
+  margin: 0 0 5px;
+  padding: 4px;
+}
+
 .profil-info {
-  margin-left: 5px;
-  margin-right: 5px;
+  // margin-left: 5px;
+  // margin-right: 5px;
   // border-color: black;
   // border-style: solid;
   text-align: center;
-  background: #f9f9f9;
+  background: $animal-yellow-light;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   padding-top: 8%;
+  padding: 25px;
+
 }
 .profil-photo {
   margin-left: 5px;
@@ -33,7 +60,7 @@
   display: inline-block;
   width: 250px;
   height: 250px;
-  background-image: url("https://www.dontshake.org/media/k2/items/cache/71f67488b0857639cee631943a3fc6fa_XL.jpg");
+  background-image: url("https://cdn0.iconfinder.com/data/icons/user-collection-4/512/user-512.png");
   background-size: contain;
   text-align: center;
   border-radius: 100%;

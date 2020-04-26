@@ -7,17 +7,71 @@
   <div class="row">
     <div class="mt-3 col-sm-4">
       <div class="profil-info">
-        Mes informations :
+        <h3>Mon profil</h3>
+        <fieldset>
+          <label for="pseudo">Pseudo</label>
+          <input [(ngModel)] = "user.pseudo" name="pseudo" placeholder="Pseudo" type="text" tabindex="1" required autofocus
+          required minlength="3" maxlength="20" #username="ngModel">
+          <div class="alert-danger" *ngIf="f.submitted && username.invalid">
+            <div *ngIf="username.errors.required">Username is required</div>
+            <div *ngIf="username.errors.minlength">
+              Le pseudo doit contenir au moins 3 caractères
+            </div>
+            <div *ngIf="username.errors.maxlength">
+              Le pseudo ne doit pas excéder 20 caractères
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <label for="firstName">Prénom</label>
+          <input [(ngModel)] = "user.firstName" name="firstName" placeholder="Prénom" type="text" tabindex="2" required autofocus
+          required minlength="3" maxlength="20" #username="ngModel">
+          <div class="alert-danger" *ngIf="f.submitted && username.invalid">
+            <div *ngIf="username.errors.required">Prénom requis</div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <label for="firstName">Nom</label>
+          <input [(ngModel)] = "user.lastName" name="lastName" placeholder="Nom" type="text" tabindex="3" required autofocus
+          required minlength="3" maxlength="20" #username="ngModel">
+          <div class="alert-danger" *ngIf="f.submitted && username.invalid">
+            <div *ngIf="username.errors.required">Nom requis</div>
+          </div>
+        </fieldset>
+
+        <hr>
+        <h5>Adresse</h5>
+
+        <fieldset>
+          <label for="firstName">Adresse</label>
+          <input [(ngModel)] = "addressForAutocomplete" name="lastName" placeholder="Addresse" type="text" tabindex="4" required autofocus
+          required minlength="3" maxlength="20" #address="ngModel" list="datalist" (input)="autocomplete()">
+          <datalist id="datalist">
+            <option value="{{a.label}}" *ngFor="let a of autocompleteResult">{{a.label}}</option>
+          </datalist>
+          <!-- <div class="alert-danger" *ngIf="f.submitted && username.invalid">
+            <div *ngIf="username.errors.required">Nom requis</div>
+          </div> -->
+        </fieldset>
+
+
+
       </div>
     </div>
+
+
     <div class="mt-3 col-sm-4">
       <div class="profil-info">
-        Mes animaux
+        <h3>Mes Animaux</h3>
       </div>
     </div>
+
+
     <div class="mt-3 col-sm-4">
       <div class="profil-info">
-        PROFIL INFO
+        <h3>Mes ... ?</h3>
       </div>
     </div>
   </div>
