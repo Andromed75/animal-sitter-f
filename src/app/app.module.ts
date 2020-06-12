@@ -22,6 +22,12 @@ import { AnimalSearchComponent } from './feature/animal-search/animal-search.com
 import { LoginComponent } from './feature/login/login.component';
 import { AccountComponent } from './feature/account/account.component';
 import { ErrorComponent } from './feature/error/error.component';
+import { MyAnimalsComponent } from './feature/account/my-animals/my-animals.component';
+import { SttingCreationComponent } from './feature/stting-creation/stting-creation.component';
+import { SittingsComponent } from './feature/animal-search/sittings/sittings.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { NgxSpinnerModule } from 'ngx-spinner';
+
 
 
 @NgModule({
@@ -33,7 +39,10 @@ import { ErrorComponent } from './feature/error/error.component';
     AnimalSearchComponent,
     LoginComponent,
     AccountComponent,
-    ErrorComponent
+    ErrorComponent,
+    MyAnimalsComponent,
+    SttingCreationComponent,
+    SittingsComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +55,8 @@ import { ErrorComponent } from './feature/error/error.component';
     MatInputModule,
     FormsModule,
     HttpClientModule,
+    InfiniteScrollModule,
+    NgxSpinnerModule
     // AngularFireModule.initializeApp(environment.firebase),
  	  // AngularFirestoreModule,
   ],

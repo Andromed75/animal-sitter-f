@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   isFailed = false;
   isLoggedIn = false;
   roles: string[] = [];
+  isLoading = false;
 
 
   constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private router: Router) { }
@@ -29,18 +30,25 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    this.isLoading = true;
     this.authService.login(this.request).subscribe(
       data => {
-        console.log(data);
+        console.log('DATA', data);
         this.tokenStorage.saveToken(data.token);
         this.tokenStorage.saveUser(data);
 
         this.isLoggedIn = true;
+        this.isLoading = false;
+        this.isSuccessful = true;
         this.roles = this.tokenStorage.getUser().roles;
         this.reloadPage();
       },
       err => {
         console.log(err);
+        this.isLoading = false;
+        this.isFailed = true;
+        console.log('ERRROR');
+
       }
     );
   }

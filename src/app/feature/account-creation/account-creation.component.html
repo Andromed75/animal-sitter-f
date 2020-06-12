@@ -45,12 +45,16 @@
         <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Valider</button>
       </fieldset>
 
+      <div class="spinner-border text-dark" role="status" *ngIf="isLoading">
+        <span class="sr-only">Loading...</span>
+      </div>
+
       <div class="alert alert-success" *ngIf="isSuccessful">
         Compte créé avec succès !
       </div>
 
       <div class="alert alert-danger" *ngIf="isFailed">
-        Une erreur est survenue
+        {{errorMessage}}
       </div>
 
     </form>

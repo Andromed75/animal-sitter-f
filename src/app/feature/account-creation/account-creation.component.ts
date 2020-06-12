@@ -13,6 +13,7 @@ export class AccountCreationComponent implements OnInit {
   errorMessage = '';
   isSuccessful  = false;
   isFailed = false;
+  isLoading = false;
 
   constructor(private authService: AuthService) { }
 
@@ -20,17 +21,21 @@ export class AccountCreationComponent implements OnInit {
   }
 
   auth() {
+    this.isLoading = true;
     this.authService.register(this.request).subscribe(
       data => {
         console.log(data);
         this.isSuccessful = true;
+        this.isLoading = false;
         setTimeout(() => this.isSuccessful = false, 3000);
 
 
       },
       err => {
-        this.errorMessage = err.error.message;
+        console.log(err);
+        this.errorMessage = err.error;
         this.isFailed = true;
+        this.isLoading = false;
         setTimeout(() => this.isFailed = false, 3000);
       }
     );

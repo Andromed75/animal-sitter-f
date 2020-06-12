@@ -36,6 +36,10 @@ body {
   // position: relative;
 }
 
+form {
+  min-height: 474px;
+}
+
 #contact input[type="text"],
 #contact input[type="email"],
 #contact input[type="tel"],
@@ -159,6 +163,13 @@ fieldset {
 
 :-ms-input-placeholder {
   color: #888;
+}
+
+// Spinner
+.spinner-border {
+  margin: 0 auto;
+  display: block;
+  margin-top: 24px;
 }
 
 // RESPONSIVE

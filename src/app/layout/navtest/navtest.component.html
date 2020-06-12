@@ -31,7 +31,7 @@
         <li *ngIf="!isLoggedIn"><a routerLink="/devenir-membre">Inscription</a></li>
         <li *ngIf="!isLoggedIn"><a routerLink="/connexion">Se connecter</a></li>
         <li *ngIf="isLoggedIn"><a [routerLink]="['/mon-compte', id]">Mon compte</a></li>
-        <li *ngIf="isLoggedIn"><a>Mes animaux</a></li>
+        <li *ngIf="isLoggedIn"><a routerLink="/mes-animaux">Mes animaux</a></li>
         <li *ngIf="isLoggedIn"><a>Mes sitting</a></li>
         <li *ngIf="isLoggedIn"><a href="#">Help</a></li>
         <li *ngIf="isLoggedIn"><a (click)="logout()">Log Out</a></li>

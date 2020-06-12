@@ -11,12 +11,10 @@ export class UserDetails {
     public firstName: string,
     public lastName: string,
     public email: string,
-    public address: Address,
+    public age: number,
+    public phone: string,
+    public adress: Address,
     public animals: Animal[],
-    public disponibility: Disponibility[]
-
-
-
   ) {
 
   }

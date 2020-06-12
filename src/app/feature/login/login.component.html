@@ -32,11 +32,15 @@
         <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Connexion</button>
       </fieldset>
 
-      <div class="alert alert-success" *ngIf="isSuccessful">
-        Compte créé avec succès !
+      <div class="spinner-border text-dark" role="status" *ngIf="isLoading">
+        <span class="sr-only">Loading...</span>
       </div>
 
-      <div class="alert alert-danger" *ngIf="isFailed">
+      <div class="alert alert-success" *ngIf="isSuccessful" role="alert" style="text-align: center;">
+        Connexion réussie !
+      </div>
+
+      <div *ngIf="isFailed" class="alert alert-danger" role="alert" style="text-align: center;">
         Une erreur est survenue
       </div>
 

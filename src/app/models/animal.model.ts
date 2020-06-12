@@ -12,10 +12,26 @@ export class Animal {
     public whenDoIEat: string,
     public whatDoIeat: string,
     public sicknesses: Sickness[]
-
-
-
   ) {
+
+  }
+
+}
+export class AnimalWithUserId {
+
+  constructor(
+
+    public name: string,
+    public tatoo: string,
+    public age: number,
+    public furColor: string,
+    public eyesColor: string,
+    public sick: boolean,
+    public whenDoIEat: string,
+    public whatDoIEat: string,
+    public sicknesses: Sickness[],
+    public userId: string
+      ) {
 
   }
 
