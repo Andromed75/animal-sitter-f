@@ -9,8 +9,8 @@ import {
 import { Observable } from "rxjs";
 import { UserDetails } from "../models/response/userDetails.model";
 import { AnimalWithUserId } from "../models/animal.model";
- const USER_API = "http://localhost:8080/api/v1/user";
-//const USER_API = 'https://animal-sitting.herokuapp.com/api/v1/user';
+  const USER_API = "http://localhost:8080/api/v1/user";
+// const USER_API = 'https://animal-sitting.herokuapp.com/api/v1/user';
 
 const httpOptions = {
   headers: new HttpHeaders({ "Content-Type": "application/json" }),

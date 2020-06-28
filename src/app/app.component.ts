@@ -18,7 +18,6 @@ export class AppComponent implements OnInit {
   constructor(private tokenStorageService: TokenStorageService) { }
 
   ngOnInit() {
-
     this.isLoggedIn = !!this.tokenStorageService.getToken();
 
     if (this.isLoggedIn) {
@@ -31,6 +30,5 @@ export class AppComponent implements OnInit {
     }
 
   }
-
 
 }

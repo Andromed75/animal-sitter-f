@@ -27,6 +27,8 @@ import { SttingCreationComponent } from './feature/stting-creation/stting-creati
 import { SittingsComponent } from './feature/animal-search/sittings/sittings.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { AnimalBubbleComponent, DialogElementsExampleDialog } from './feature/account/animal-bubble/animal-bubble.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -42,7 +44,10 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     ErrorComponent,
     MyAnimalsComponent,
     SttingCreationComponent,
-    SittingsComponent
+    SittingsComponent,
+    AnimalBubbleComponent,
+    DialogElementsExampleDialog
+
   ],
   imports: [
     BrowserModule,
@@ -56,9 +61,13 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     FormsModule,
     HttpClientModule,
     InfiniteScrollModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    MatDialogModule
     // AngularFireModule.initializeApp(environment.firebase),
  	  // AngularFirestoreModule,
+  ],
+  entryComponents: [
+    DialogElementsExampleDialog
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

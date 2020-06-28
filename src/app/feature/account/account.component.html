@@ -77,7 +77,7 @@
 
             <fieldset>
               <label for="firstName">Numéro de téléphonne</label>
-              <input [(ngModel)]="user.phone" name="phone" placeholder="Téléphone" type="text" tabindex="5" required
+              <input [(ngModel)]="user.phone" name="phone" placeholder="Téléphone" type="text" tabindex="6" required
                 required minlength="10" maxlength="10" #phone="ngModel">
               <!-- <div class="alert-danger" *ngIf="f.submitted && username.invalid">
             <div *ngIf="username.errors.required">Nom requis</div>
@@ -111,7 +111,7 @@
             <fieldset>
               <label for="firstName">Adresse</label>
               <input [(ngModel)]="user.adress.street" name="addressForAutocomplete" placeholder="Addresse" type="text"
-                tabindex="6" required #address="ngModel" list="datalist" (input)="autocomplete()"
+                tabindex="8" required #address="ngModel" list="datalist" (input)="autocomplete()"
                 (change)="onSortChange($event)">
               <datalist id="datalist">
                 <option value="{{a.name}}" *ngFor="let a of autocompleteResult">{{a.region}}</option>
@@ -124,7 +124,7 @@
             <fieldset>
               <label for="firstName">Code Postal</label>
               <input [(ngModel)]="user.adress.postalcode" name="postalCode" placeholder="Code postal" type="text"
-                tabindex="7" required required minlength="5" maxlength="5" #postalCode="ngModel">
+                tabindex="9" required required minlength="5" maxlength="5" #postalCode="ngModel">
               <!-- <div class="alert-danger" *ngIf="f.submitted && username.invalid">
             <div *ngIf="username.errors.required">Nom requis</div>
           </div> -->
@@ -132,7 +132,7 @@
 
             <fieldset>
               <label for="firstName">Pays</label>
-              <input [(ngModel)]="user.adress.country" name="country" placeholder="Pays" type="text" tabindex="7"
+              <input [(ngModel)]="user.adress.country" name="country" placeholder="Pays" type="text" tabindex="10"
                 required required minlength="1" maxlength="30" #country="ngModel">
               <!-- <div class="alert-danger" *ngIf="f.submitted && username.invalid">
             <div *ngIf="username.errors.required">Nom requis</div>

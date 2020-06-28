@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { Animal, Sickness, AnimalWithUserId } from 'src/app/models/animal.model';
 import { TokenStorageService } from '../../../services/token-storage.service';
-import { HttpEventType, HttpResponse } from '@angular/common/http';
+import { HttpEventType, HttpResponse, HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -18,6 +18,7 @@ export class MyAnimalsComponent implements OnInit {
   selectedFiles: FileList;
   requestAnimal: AnimalWithUserId = new AnimalWithUserId('', '', 0 , '', '', false, '', '', new Array<Sickness>(), this.userId);
   progress: { percentage: number } = { percentage: 0 };
+
 
 
   constructor(private tokenStorageService: TokenStorageService, private userService: UserService) { }
@@ -57,5 +58,7 @@ export class MyAnimalsComponent implements OnInit {
       alert('invalid format!');
     }
   }
+
+
 
 }

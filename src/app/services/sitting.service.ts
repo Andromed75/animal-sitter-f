@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
- // const AUTH_API = 'https://animal-sitting.herokuapp.com/api/sitting/v1';
+//  const AUTH_API = 'https://animal-sitting.herokuapp.com/api/sitting/v1';
 const AUTH_API = 'http://localhost:8080/api/sitting/v1';
 
 const httpOptions = {
@@ -21,6 +21,6 @@ export class SittingService {
   }
 
   getAllSittingsPaginatedByPostcode(pageNumber: number, postcode: number): Observable<any> {
-    return this.http.get(`${AUTH_API}/postcodetestpaginated?postcode=${postcode}&page=${pageNumber}`, httpOptions);
+    return this.http.get(`${AUTH_API}/all?postcode=${postcode}&page=${pageNumber}`, httpOptions);
   }
 }

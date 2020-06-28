@@ -2,12 +2,12 @@
 
   <div class="containerr">
     <form id="contact" #f="ngForm" (ngSubmit)="f.form.valid && login()">
-      <h3>Je me connecte</h3>
+      <h3 class="text-center">Je me connecte</h3>
       <fieldset>
         <input [(ngModel)] = "request.username" name="username" placeholder="Pseudo" type="text" tabindex="1" required autofocus
         required minlength="3" maxlength="20" #username="ngModel">
         <div class="alert-danger" *ngIf="f.submitted && username.invalid">
-          <div *ngIf="username.errors.required">Username is required</div>
+          <div *ngIf="username.errors.required">Pseudo non saisi</div>
           <div *ngIf="username.errors.minlength">
             Le pseudo doit contenir au moins 3 caractères
           </div>
@@ -21,15 +21,15 @@
         <input [(ngModel)] = "request.password" name="password" placeholder="mot de passe" type="password" tabindex="2" required minlength="6"
         #password="ngModel">
         <div class="alert-danger" *ngIf="f.submitted && password.invalid">
-          <div *ngIf="password.errors.required">Password is required</div>
+          <div *ngIf="password.errors.required">Mot de passe non saisi</div>
           <div *ngIf="password.errors.minlength">
-            Password must be at least 6 characters
+            Le mot de passe doit faire au minimum 6 caractères
           </div>
         </div>
       </fieldset>
 
       <fieldset>
-        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Connexion</button>
+        <button class="btn btn-outline-success" name="submit" type="submit" id="contact-submit" data-submit="...Sending">Connexion</button>
       </fieldset>
 
       <div class="spinner-border text-dark" role="status" *ngIf="isLoading">

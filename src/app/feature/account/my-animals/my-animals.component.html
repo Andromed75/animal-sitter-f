@@ -27,23 +27,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-4" *ngFor="let animal of userAnimals">
-            <div class="aniframe">
-              <div class="aniphoto"></div>
-              <div>
-                <h3>{{animal.name}}</h3>
-              </div>
-                <p>Mon animal a {{animal.age}} ans, les yeux {{animal.eyesColor}} et le pelage {{animal.furColor}}</p>
-                <p>Tatouage n° {{animal.tatoo}}</p>
-                <p>Il mange : {{animal.whatDoIEat}}, {{animal.whenDoIEat}}</p>
-                <p>Mon animal est il malade ? : {{animal.sick ? 'Oui' : 'Non'}}</p>
-              <div>
-              </div>
-
-              <div>
-
-              </div>
-
-            </div>
+            <app-animal-bubble [animal]="animal"></app-animal-bubble>
           </div>
           <!-- <div class="col-sm-4">
             <div class="aniframe">

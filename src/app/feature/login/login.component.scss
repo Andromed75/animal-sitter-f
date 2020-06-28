@@ -2,9 +2,11 @@
 @import '../../../ressource/variables.scss';
 
 .test {
-  background: #CEEDEF;
-  height: 93.2230491638%;
+  // background: #CEEDEF;
+  // height: 93.2230491638%;
 }
+
+p,
 
 * {
   margin: 0;
@@ -50,17 +52,22 @@ form {
 }
 
 #contact {
-  background: #f9f9f9;
+  background: $animal-yellow-light;
   padding: 25px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   padding-top: 8%;
 }
 
 #contact h3 {
+  letter-spacing: 3px;
+  color: white;
   display: block;
   font-size: 30px;
   font-weight: 300;
-  margin-bottom: 10px;
+  font-weight: bold;;
+  margin-bottom: 30px;
+  text-align: center;
+  color: $animal-kaki-dark;
 }
 
 #contact h4 {
@@ -109,26 +116,33 @@ fieldset {
   resize: none;
 }
 
-#contact button[type="submit"] {
-  cursor: pointer;
+// #contact button[type="submit"] {
+//   cursor: pointer;
+//   width: 100%;
+//   border: none;
+//   background: rgb(255, 215, 113);
+//   color: #fff;
+//   margin: 0 0 5px;
+//   padding: 10px;
+//   font-size: 15px;
+// }
+
+// #contact button[type="submit"]:hover {
+//   background: #FCBE1E;
+//   -webkit-transition: background 0.3s ease-in-out;
+//   -moz-transition: background 0.3s ease-in-out;
+//   transition: background-color 0.3s ease-in-out;
+// }
+
+// #contact button[type="submit"]:active {
+//   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+// }
+
+.btn {
   width: 100%;
-  border: none;
-  background: rgb(255, 215, 113);
-  color: #fff;
-  margin: 0 0 5px;
-  padding: 10px;
-  font-size: 15px;
-}
-
-#contact button[type="submit"]:hover {
-  background: #FCBE1E;
-  -webkit-transition: background 0.3s ease-in-out;
-  -moz-transition: background 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out;
-}
-
-#contact button[type="submit"]:active {
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
+  height: 37px;
+  font-size: 20px!important;
 }
 
 .copyright {

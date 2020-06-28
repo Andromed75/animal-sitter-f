@@ -3,7 +3,7 @@
   <div class="containerr">
     <form id="contact" #f="ngForm" (ngSubmit)="f.form.valid && auth()">
       <h3>Je m'inscris</h3>
-      <h4>Des informations complémentaires vous seront demandé plus tard afin de compléter votre profil</h4>
+      <h4>Des informations complémentaires vous seront demandé plus tard afin de compléter votre profil.</h4>
       <fieldset>
         <input [(ngModel)] = "request.pseudo" name="pseudo" placeholder="Pseudo" type="text" tabindex="1" required autofocus
         required minlength="3" maxlength="20" #username="ngModel">
@@ -42,7 +42,7 @@
 
 
       <fieldset>
-        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Valider</button>
+        <button class="btn btn-outline-success" name="submit" type="submit" id="contact-submit" data-submit="...Sending">Valider</button>
       </fieldset>
 
       <div class="spinner-border text-dark" role="status" *ngIf="isLoading">

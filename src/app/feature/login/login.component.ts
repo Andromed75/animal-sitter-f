@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    this.isFailed = false;
     this.isLoading = true;
     this.authService.login(this.request).subscribe(
       data => {

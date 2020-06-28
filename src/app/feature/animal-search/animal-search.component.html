@@ -34,7 +34,7 @@
       <div class="search-results" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50"
         (scrolled)="onScroll()">
 
-        <div class="col-md-4 p-2" *ngFor="let sitting of sittingList">
+        <div class="col-md-12 p-2" *ngFor="let sitting of sittingList">
 
           <app-sittings [sitting]="sitting"></app-sittings>
 
