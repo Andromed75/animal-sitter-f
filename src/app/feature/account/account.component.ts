@@ -30,7 +30,6 @@ export class AccountComponent implements OnInit {
 
   ngOnInit() {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
-    console.log('IS LOGGED IN :' + this.isLoggedIn);
 
     // If nobody is logged to the web site => redirect
     if(!this.isLoggedIn) {
@@ -50,9 +49,7 @@ export class AccountComponent implements OnInit {
   getUserDetails(id: string) {
     this.userService.getUserDetails(id).subscribe(
       data => {
-        console.log('data', data);
         this.user = data;
-        console.log('user', this.user);
       },
       err => {
         console.log(err);

@@ -14,8 +14,6 @@ export class LayoutComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log('Layout, id = ' + this.id);
-
   }
 
 }

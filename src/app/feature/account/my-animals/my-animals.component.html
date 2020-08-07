@@ -24,6 +24,14 @@
   </ul>
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+      <!-- IF USER HAS NO ANIMALS YET -->
+      <div class="container" *ngIf="userAnimals.length === 0">
+        <div class="no-animals col-sm-12">
+          <h2>Vous n'avez pas encore d'animaux</h2>
+        </div>
+      </div>
+
       <div class="container">
         <div class="row">
           <div class="col-sm-4" *ngFor="let animal of userAnimals">

@@ -14,14 +14,25 @@ export class AnimalSearchComponent implements OnInit {
   postcode: number;
   notscrolly = true;
   notEmptyPost = true;
+  shiftBeggining: string;
+  shiftEnd: string;
+
 
   constructor(private sittingService: SittingService, private spinner: NgxSpinnerService) { }
 
   ngOnInit() {
   }
 
+  search() {
+    this.sittingList = [];
+    this.notscrolly = true;
+    this.notEmptyPost = true;
+    this.pageNumber = 0;
+    this.getSittings();
+  }
+
   getSittings() {
-    this.sittingService.getAllSittingsPaginatedByPostcode(this.pageNumber, this.postcode).subscribe(
+    this.sittingService.getAllSittingsPaginatedByPostcode(this.pageNumber, this.postcode, this.shiftBeggining, this.shiftEnd).subscribe(
       data => {
         console.log(data);
         const newPost = data;
@@ -48,6 +59,19 @@ export class AnimalSearchComponent implements OnInit {
       this.notscrolly = false;
       this.getSittings();
    }
+  }
+
+  storeBeggining(event: Date) {
+    event.setHours(2);
+    this.shiftBeggining = event.toISOString();
+    console.log(this.shiftBeggining);
+
+  }
+
+  storeEnd(event: Date) {
+    event.setHours(2);
+    this.shiftEnd = event.toJSON();
+    console.log(this.shiftEnd);
   }
 
 }

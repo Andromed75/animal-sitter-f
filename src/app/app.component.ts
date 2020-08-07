@@ -25,8 +25,6 @@ export class AppComponent implements OnInit {
       this.roles = user.roles;
       this.username = user.username;
       this.id = user.id;
-      console.log(user);
-      console.log('APP COMP, id = ' + user.id);
     }
 
   }

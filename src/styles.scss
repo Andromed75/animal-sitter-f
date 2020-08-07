@@ -30,3 +30,31 @@ $animal-sitter-front-theme: mat-light-theme($animal-sitter-front-primary, $anima
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import '~leaflet/dist/leaflet.css';
+
+.map-wrapper {
+
+  margin: 20px;
+}
+
+
+#map {
+  height: 555px;
+  width: 555px;
+  position: fixed;
+  top: 279px;
+}
+
+@media  (max-width: 768px) {
+  .map-wrapper{
+    display: none;
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+

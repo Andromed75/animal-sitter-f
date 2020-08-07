@@ -50,6 +50,12 @@
   margin-top: 15px;
 }
 
+.infos-container {
+  width: 100%!important;
+  margin-top: -504px;
+  padding-bottom: 110px;
+}
+
 @media screen and (max-width: 883px) {
   .wrapperr {
     height: 88%;
@@ -73,6 +79,9 @@
      }
   }
 
+  .infos-container {
+    margin-top: 0px;
+  }
 
 
 

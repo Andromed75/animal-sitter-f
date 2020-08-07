@@ -1,7 +1,7 @@
 <div class="aniframe">
   <div class="aniphoto">
-    <img class="animal-image" [src]="retrievedImage">
-    <span class="material-icons" style="margin-left: 0px; margin-top: 0px;cursor: pointer;" (click)="openDialog()">add_a_photo</span>
+    <img class="animal-image" [src]="retrievedImage" *ngIf="retrievedImage != null">
+    <span class="material-icons" style="margin-left: 0px; margin-top: 0px;cursor: pointer;" (click)="openDialog()">add_a_photo</span><p>Ajouter une photo</p>
   </div>
   <div>
     <h3>{{animal.name}}</h3>

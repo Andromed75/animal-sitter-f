@@ -8,7 +8,7 @@ import { TestComponent } from './test/test.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepicker, MatDatepickerContent, MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatNativeDateModule} from '@angular/material/core';
+import { MatNativeDateModule, MAT_DATE_LOCALE} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -29,6 +29,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { AnimalBubbleComponent, DialogElementsExampleDialog } from './feature/account/animal-bubble/animal-bubble.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MapComponent } from './feature/animal-search/map/map.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 
 
@@ -46,7 +48,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     SttingCreationComponent,
     SittingsComponent,
     AnimalBubbleComponent,
-    DialogElementsExampleDialog
+    DialogElementsExampleDialog,
+    MapComponent
 
   ],
   imports: [
@@ -62,14 +65,16 @@ import { MatDialogModule } from '@angular/material/dialog';
     HttpClientModule,
     InfiniteScrollModule,
     NgxSpinnerModule,
-    MatDialogModule
+    MatDialogModule,
     // AngularFireModule.initializeApp(environment.firebase),
  	  // AngularFirestoreModule,
   ],
   entryComponents: [
     DialogElementsExampleDialog
   ],
-  providers: [authInterceptorProviders],
+  providers: [authInterceptorProviders,
+    {provide: MAT_DATE_LOCALE, useValue: 'fr-FR'},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

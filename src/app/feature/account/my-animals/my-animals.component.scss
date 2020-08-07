@@ -207,3 +207,14 @@ fieldset > label {
   margin-top: 15px;
   font-style: italic;
 }
+
+.no-animals {
+  background-color: $animal-yellow-light;
+  text-align: center;
+  height: 200px;
+  border-radius: 100px;
+  h2{
+    color: $animal-kaki;
+    padding-top: 67px;
+  }
+}

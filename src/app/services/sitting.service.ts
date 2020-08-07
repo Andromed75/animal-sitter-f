@@ -20,7 +20,7 @@ export class SittingService {
     return this.http.post(`${AUTH_API}/test`, body, httpOptions);
   }
 
-  getAllSittingsPaginatedByPostcode(pageNumber: number, postcode: number): Observable<any> {
-    return this.http.get(`${AUTH_API}/all?postcode=${postcode}&page=${pageNumber}`, httpOptions);
+  getAllSittingsPaginatedByPostcode(pageNumber: number, postcode: number, beg: string, end: string): Observable<any> {
+    return this.http.get(`${AUTH_API}/search?postcode=${postcode}&page=${pageNumber}&beg=${beg}&end=${end}`, httpOptions);
   }
 }
